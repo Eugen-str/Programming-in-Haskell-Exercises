@@ -1,9 +1,9 @@
 qsort'::Ord a => [a] -> [a]
 qsort' [] = []
 qsort' (x:xs) = qsort' smaller ++ [x] ++ qsort' larger
-               where
-               smaller = [a | a <- xs, a < x]
-               larger = [b | b <- xs, b > x]
+                where
+                smaller = [a | a <- xs, a < x]
+                larger = [b | b <- xs, b > x]
 
 {-
 Replacing the <= with a < and inputing qsort' [2,2,3,1,1] 
