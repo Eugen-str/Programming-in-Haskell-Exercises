@@ -24,3 +24,9 @@ decode [] = ""
 decode bits = if even (sum $ take 9 bits) 
     then chr(bin2int $ take 8 bits) : decode (drop 9 bits) 
     else error "Transmission error!"
+
+channel::[Bit] -> [Bit]
+channel = id
+
+transmit::String -> String
+transmit = decode . channel . encode
