@@ -26,7 +26,7 @@ decode bits = if even (sum $ take 9 bits) && odd (sum $ take 8 bits)
     else error "Transmission error!"
 
 channel::[Bit] -> [Bit]
-channel = id
+channel = tail
 
 transmit::String -> String
 transmit = decode . channel . encode
